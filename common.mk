@@ -12,5 +12,5 @@ ROOT ?= $(shell pwd)
 #
 
 QEMU_PATH		?= $(ROOT)/qemu
-BAREMETAL_PATH	?= $(ROOT)/aarch64-bare-metal-qemu
+WOOSHV_PATH		?= $(ROOT)/aarch64-bare-metal-qemu
 TOOLCHAIN_PATH	?= $(ROOT)/toolchains
