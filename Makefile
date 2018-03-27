@@ -1,4 +1,5 @@
 include common.mk
+include toolchain.mk
 
 osname := $(shell uname -s)
 
