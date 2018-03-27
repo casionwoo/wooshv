@@ -29,6 +29,9 @@ wooshv:
 wooshv-clean:
 	$(MAKE) -C $(WOOSHV_PATH) clean
 
+run: all
+	$(MAKE) run-only
+
 run-only:
 	$(QEMU_AARCH64)/qemu-system-aarch64 -M virt -cpu cortex-a57 -nographic  -kernel $(WOOSHV_BIN)
 
