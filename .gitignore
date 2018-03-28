@@ -4,4 +4,4 @@ toolchains
 toolchains/*
 *.elf
 tags
-
+*.bin
