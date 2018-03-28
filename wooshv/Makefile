@@ -1,20 +1,20 @@
 osname := $(shell uname -s)
 
+all: wooshv.elf
+
 CROSS_PREFIX=../toolchains/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-
 
-all: test64.elf
-
-test64.o: test64.c
+main.o: main.c
 	$(CROSS_PREFIX)gcc -c $< -o $@
 
-startup64.o: startup64.s
+head.o: head.s
 	$(CROSS_PREFIX)as -c $< -o $@
 
-test64.elf: test64.o startup64.o
-	$(CROSS_PREFIX)ld -Ttest64.ld $^ -o $@
+wooshv.elf: main.o head.o
+	$(CROSS_PREFIX)ld -Tkern.ld.S $^ -o $@
 
-test64.bin: test64.elf
+wooshv.bin: wooshv.elf
 	$(CROSS_PREFIX)objcopy -O binary $< $@
 
 clean:
-	rm -f test65.bin test64.elf startup64.o test64.o
+	rm -f wooshv.bin wooshv.elf head.o main.o

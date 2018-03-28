@@ -5,11 +5,11 @@ osname := $(shell uname -s)
 
 ROOT_DIR=$(curr)
 
-CROSS_PREFIX=../toolchains/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-
+CROSS_PREFIX=$(TOOLCHAIN_PATH)/toolchains/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch64-elf-
 
 QEMU_AARCH64=$(QEMU_PATH)/aarch64-softmmu
 
-WOOSHV_BIN=$(WOOSHV_PATH)/test64.elf
+WOOSHV_BIN=$(WOOSHV_PATH)/wooshv.elf
 
 all:	\
 	qemu_ wooshv_
