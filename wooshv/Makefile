@@ -7,7 +7,7 @@ CROSS_PREFIX=../toolchains/gcc-linaro-7.2.1-2017.11-x86_64_aarch64-elf/bin/aarch
 main.o: main.c
 	$(CROSS_PREFIX)gcc -c $< -o $@
 
-head.o: head.s
+head.o: head.S
 	$(CROSS_PREFIX)as -c $< -o $@
 
 wooshv.elf: main.o head.o
