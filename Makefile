@@ -12,7 +12,7 @@ QEMU_AARCH64=$(QEMU_PATH)/aarch64-softmmu
 WOOSHV_BIN=$(WOOSHV_PATH)/test64.elf
 
 all:	\
-	qemu_ wooshv
+	qemu_ wooshv_
 clean:	\
 	qemu-clean wooshv-clean
 
@@ -24,7 +24,7 @@ qemu-clean:
 	$(MAKE) -C $(QEMU_PATH) distclean
 
 
-wooshv:
+wooshv_:
 	$(MAKE) -C $(WOOSHV_PATH)
 
 wooshv-clean:
