@@ -1,0 +1,15 @@
+* Booting
+	- GIC init (v2)
+	- Pagetable init (only for hypervisor first)
+	- Console init
+	- Timer init
+	- IRQ trap and inject to guest
+
+* Guest loading
+	- loading and read ELF format information from guest
+	- Stage-2 translation pagetable init
+
+* Debugging service
+	- input system for debugging command
+	- replacing the instruction to be wfe
+	- print service for showing their registers including system registers
